@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja" id="htmlRoot">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Chloe | Official Website</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 外部CSSの読み込み -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="header-container">
+            <a class="logo" onclick="switchTab('home')">Project Chloe</a>
+            <nav class="site-nav">
+                <button class="nav-link active" onclick="switchTab('home')" data-i18n="nav_home">Home</button>
+                <button class="nav-link" onclick="switchTab('guide')" data-i18n="nav_guide">Chloe Guide</button>
+                <button class="nav-link" onclick="switchTab('studio')" data-i18n="nav_studio">Chloe Studio</button>
+                <button class="nav-link" onclick="switchTab('blog-sns')" data-i18n="nav_blog_sns">Blog & SNS</button>
+                <button class="nav-link" onclick="switchTab('about')" data-i18n="nav_about">About Us</button>
+                <button class="nav-link" onclick="switchTab('contact')" data-i18n="nav_contact">Contact</button>
+                <div class="lang-switcher">
+                    <select id="langSelect" onchange="changeLanguage()">
+                        <option value="ja">🇯🇵 JA</option>
+                        <option value="en">🇬🇧 EN</option>
+                        <option value="fr">🇫🇷 FR</option>
+                        <option value="es">🇪🇸 ES</option>
+                        <option value="zh">🇨🇳 ZH</option>
+                        <option value="ko">🇰🇷 KO</option>
+                    </select>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <!-- 1. ホームセクション -->
+        <section id="home" class="page-section active">
+            
+            <!-- フルスクリーンヒーロービジュアル（薄めフィルター opacity: 0.25） -->
+            <div class="hero-banner-fullscreen">
+                <div class="hero-bg-animated"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="tag hero-badge" data-i18n="hero_tag">Welcome to Project Chloe</span>
+                    <h1 data-i18n="hero_title">文化を超えたつながりと暮らしを彩る。</h1>
+                    <p data-i18n="hero_desc">Project Chloeは日本での生活ガイド、日本デザインのクリエイティブ、そして国際カップルとしての日常を発信します。世界中の人々が手を繋ぎ、心豊かなライフスタイルを築くためのインスピレーションをお届けします。</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-outline-white" onclick="switchTab('about')" data-i18n="btn_about_us">私たちについて / About</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="brands" class="brands-section">
+                <h2 class="section-title" data-i18n="sec_our_brands">3つの展開ブランド</h2>
+                <p class="section-desc" data-i18n="sec_brands_desc">Project Chloeの軸となる専門チャンネルをご紹介します。</p>
+                
+                <div class="grid-2">
+                    <div class="card brand-card" onclick="switchTab('guide')">
+                        <div class="brand-image-wrap">
+                            <img src="japanlife.jpeg" alt="Chloe Guide" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22220%22 viewBox=%220 0 400 220%22%3E%3Crect width=%22400%22 height=%22220%22 fill=%22%23EFEAF4%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%235D4E72%22%3Ejapan_picture.jpeg%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <span class="tag">Guide</span>
+                        <h3>Chloe Guide</h3>
+                        <p data-i18n="brand1_desc">日本へ移住された外国籍の方向けの安心ライフハック。行政手続きから日常生活の知恵まで網羅。</p>
+                        <button class="btn btn-sm" data-i18n="btn_view_details">詳しく見る</button>
+                    </div>
+                    <div class="card brand-card" onclick="switchTab('studio')">
+                        <div class="brand-image-wrap">
+                            <img src="japanesestyle2027planner.jpeg" alt="Chloe Studio" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22220%22 viewBox=%220 0 400 220%22%3E%3Crect width=%22400%22 height=%22220%22 fill=%22%23EFEAF4%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%235D4E72%22%3Ecreative.jpeg%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <span class="tag">Studio</span>
+                        <h3>Chloe Studio</h3>
+                        <p data-i18n="brand2_desc">毎日のスケジュールやタスク管理を美しく彩る、オリジナルNotionテンプレートやデジタルプランナーの販売。</p>
+                        <button class="btn btn-sm" data-i18n="btn_go_store">ストアへ行く</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Chloe Guide -->
+        <section id="guide" class="page-section">
+            <h2 class="section-title" data-i18n="guide_title">Chloe Guide - 日本生活ガイド</h2>
+            <p class="section-desc" data-i18n="guide_desc">日本へ移住された外国籍の方向けの実用的なライフハックと行政手続きのアドバイス。</p>
+            <div class="card static-card">
+                <span class="tag">🇯🇵 Japan Life Setup & Living Guide</span>
+                <h3 data-i18n="guide_card_title">安心の日本ライフをサポートする生活知恵袋</h3>
+                <p data-i18n="guide_card_desc">東京や主要都市での住まい探し、医療保険、ライフラインの契約から、日本の文化にスムーズに溶け込むためのヒントまで、外国人の皆様が直面する疑問を丁寧に解説します。</p>
+                <div class="guide-image-wrap" style="margin: 1.5rem 0;">
+                    <img src="japanlife.jpeg" alt="Japan Life Setup" style="width:100%; border-radius:12px; height:240px; object-fit:cover;" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22300%22 viewBox=%220 0 800 300%22%3E%3Crect width=%22800%22 height=%22300%22 fill=%22%23EFEAF4%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2218%22 fill=%22%235D4E72%22%3Ejapan_picture.jpeg%3C/text%3E%3C/svg%3E'">
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <a href="https://chloejapan.gumroad.com/l/japan-living-smart-guide" target="_blank" class="btn full-width" style="text-align: center; text-decoration: none; display: block;" data-i18n="btn_buy_ec">ECサイトで購入する</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Chloe Studio -->
+        <section id="studio" class="page-section">
+            <h2 class="section-title" data-i18n="studio_title">Chloe Studio - デジタルクリエイティブ</h2>
+            <p class="section-desc" data-i18n="studio_desc">毎日の生活やワークスタイルを美しく整えるデジタルアセットの販売ページ。</p>
+            <div class="grid-3">
+                <!-- 日本生活ガイド Notionテンプレート -->
+                <div class="card product-card">
+                    <div class="product-image-wrap">
+                        <img src="japanlife.jpeg" alt="Japan Life Guide Notion Template" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22220%22 viewBox=%220 0 400 220%22%3E%3Crect width=%22400%22 height=%22220%22 fill=%22%23EFEAF4%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%235D4E72%22%3Ejapanlife.jpeg%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div>
+                        <span class="tag">New Release 🔥</span>
+                        <h3 data-i18n="prod1_title">日本生活ガイド Notionテンプレート</h3>
+                        <p data-i18n="prod1_desc">日本で快適かつスマートに生活するためのテンプレート。ネイティブしか知らないような実践的なノウハウや質の高い情報をお届け。</p>
+                    </div>
+                    <div>
+                        <div class="price">$15</div>
+                        <a href="https://chloejapan.gumroad.com/l/japan-living-smart-guide" target="_blank" class="btn full-width" style="text-align: center; text-decoration: none; display: block;" data-i18n="btn_buy_ec">ECサイトで購入する</a>
+                    </div>
+                </div>
+
+                <!-- オリジナルジャーナル -->
+                <div class="card product-card">
+                    <div class="product-image-wrap">
+                        <img src="ZEN_journaling02.jpeg" alt="Household Account Book" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22220%22 viewBox=%220 0 400 220%22%3E%3Crect width=%22400%22 height=%22220%22 fill=%22%23EFEAF4%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%235D4E72%22%3Ecreative.jpeg%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div>
+                        <span class="tag">Digital Goods</span>
+                        <h3 data-i18n="prod2_title">禅 90日 マインドフルジャーナル</h3>
+                        <p data-i18n="prod2_desc">3ヶ月間で心を調え、自分軸を取り戻すマインドフルネス・ジャーナリングノート。日本の禅をモチーフにしたデザイン。</p>
+                    </div>
+                    <div>
+                        <div class="price">$10</div>
+                        <a href="https://chloejapan.gumroad.com/l/wlgpfj" target="_blank" class="btn full-width" style="text-align: center; text-decoration: none; display: block;" data-i18n="btn_buy_ec">ECサイトで購入する</a>
+                    </div>
+                </div>
+
+                <!-- オリジナルカレンダー -->
+                <div class="card product-card">
+                    <div class="product-image-wrap">
+                        <img src="japanesestyle2027planner03.jpeg" alt="Digital Calendar" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22220%22 viewBox=%220 0 400 220%22%3E%3Crect width=%22400%22 height=%22220%22 fill=%22%23EFEAF4%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%235D4E72%22%3Ecouple.jpeg%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div>
+                        <span class="tag">Digital Goods</span>
+                        <h3 data-i18n="prod3_title">日本風 2027年 デジタルプランナー</h3>
+                        <p data-i18n="prod3_desc">洗練された和の美意識と現代的な機能性を融合させ、四季折々の美しいデザインとともに月間・週間のタスクを心地よく管理できる2027年版デジタルプランナー。</p>
+                    </div>
+                    <div>
+                        <div class="price">$7</div>
+                        <a href="https://chloejapan.gumroad.com/l/jmyon" target="_blank" class="btn full-width" style="text-align: center; text-decoration: none; display: block;" data-i18n="btn_buy_ec">ECサイトで購入する</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Blog & SNS -->
+        <section id="blog-sns" class="page-section">
+            <h2 class="section-title" data-i18n="blog_title">Blog & SNS / ブログ・SNS</h2>
+            <p class="section-desc" data-i18n="blog_desc">公式Bloggerでの最新コラム記事や、公式Instagramチャンネルをチェックできます。</p>
+            
+            <h3 class="sub-heading" data-i18n="blog_sub_heading">最新ブログ記事</h3>
+            <div class="grid-2">
+                <a href="https://chloejapanlife.blogspot.com/2026/10/furusato-nozei-hometown-tax-how-to-get.html" target="_blank" class="notion-blog-card">
+                    <div class="notion-cover">
+                        <img src="furusato.jpeg" alt="Furusato Nozei Guide" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22240%22 viewBox=%220 0 600 240%22%3E%3Crect width=%22600%22 height=%22240%22 fill=%22%23EFEAF4%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%235D4E72%22%3Ejapan_picture.jpeg%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="notion-body">
+                        <span class="tag">Blogger ・ 2026.10</span>
+                        <h4 data-i18n="post1_title">Furusato Nozei (Hometown Tax): How to Get Delicious Japanese Food Using Your Taxes 🍙🌾🍎</h4>
+                        <p data-i18n="post1_desc">日本のふるさと納税制度を活用して、返礼品を受け取りながら地域を応援する方法を解説。</p>
+                    </div>
+                </a>
+
+                <a href="https://chloejapanlife.blogspot.com/2026/10/suica-pasmo-101-only-transit-card-guide.html" target="_blank" class="notion-blog-card">
+                    <div class="notion-cover">
+                        <img src="train.jpg" alt="Suica & PASMO Guide" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22240%22 viewBox=%220 0 600 240%22%3E%3Crect width=%22600%22 height=%22240%22 fill=%22%23EFEAF4%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%235D4E72%22%3Ejapan_picture.jpeg%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="notion-body">
+                        <span class="tag">Blogger ・ 2026.10</span>
+                        <h4 data-i18n="post2_title">Suica & PASMO 101: The Only Transit Card Guide You'll Need</h4>
+                        <p data-i18n="post2_desc">日本でIC乗車券（Suica / PASMO）を発行・活用するための完全ガイド。</p>
+                    </div>
+                </a>
+
+                <a href="https://chloejapanlife.blogspot.com/2026/10/choosing-mobile-carrier-in-japan-no.html" target="_blank" class="notion-blog-card">
+                    <div class="notion-cover">
+                        <img src="sim.jpg" alt="Mobile Carrier Guide" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22240%22 viewBox=%220 0 600 240%22%3E%3Crect width=%22600%22 height=%22240%22 fill=%22%23EFEAF4%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%235D4E72%22%3Ejapan_picture.jpeg%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="notion-body">
+                        <span class="tag">Blogger ・ 2026.10</span>
+                        <h4 data-i18n="post3_title">Choosing a Mobile Carrier in Japan: A No-Stress Guide for Foreign Residents</h4>
+                        <p data-i18n="post3_desc">在留外国人のための、ストレスのない格安SIM・携帯キャリア選び徹底ガイド。</p>
+                    </div>
+                </a>
+
+                <a href="https://chloejapanlife.blogspot.com/2026/10/for-foreign-residents-step-by-step.html" target="_blank" class="notion-blog-card">
+                    <div class="notion-cover">
+                        <img src="yakusyo.jpg" alt="City Hall Procedures Guide" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22240%22 viewBox=%220 0 600 240%22%3E%3Crect width=%22600%22 height=%22240%22 fill=%22%23EFEAF4%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%235D4E72%22%3Ejapan_picture.jpeg%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="notion-body">
+                        <span class="tag">Blogger ・ 2026.10</span>
+                        <h4 data-i18n="post4_title">For Foreign Residents: Step-by-Step Guide to What to Do After Arriving in Japan & City Hall Procedures</h4>
+                        <p data-i18n="post4_desc">来日直後にやるべき市役所での住民登録や各種手続きの流れを分かりやすく解説。</p>
+                    </div>
+                </a>
+            </div>
+
+            <h3 class="sub-heading" data-i18n="sns_sub_heading">公式SNS</h3>
+            <div class="grid-3" style="margin-top: 1.5rem; grid-template-columns: minmax(300px, 400px);">
+                <div class="card sns-channel-card">
+                    <div class="sns-channel-img">
+                        <img src="instagram.png" alt="Instagram" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22 viewBox=%220 0 400 200%22%3E%3Crect width=%22400%22 height=%22200%22 fill=%22%23EFEAF4%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%235D4E72%22%3Ecouple.jpeg%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="sns-channel-body">
+                        <h3>Instagram</h3>
+                        <p data-i18n="sns_desc">日々の美しいクリエイティブやライフスタイル、お知らせなどを発信中。</p>
+                        <a href="https://www.instagram.com/smart.japan.life?exln=Y3Zvb2E1NHh3cTFi&utm_source=qr" target="_blank" class="btn btn-sm full-width" data-i18n="btn_follow">フォローする</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. About Us -->
+        <section id="about" class="page-section">
+            <h2 class="section-title" data-i18n="about_title">About Us / 事業概要</h2>
+            <div class="card static-card" style="max-width: 800px; margin: 0 auto;">
+                <span class="tag">Sole Proprietorship</span>
+                <h3 data-i18n="about_card_title">Project Chloe について</h3>
+                <p class="about-p"><strong data-i18n="about_label_name">屋号:</strong> Project Chloe</p>
+                <p class="about-p"><strong data-i18n="about_label_owner">代表者:</strong> Chloe</p>
+                <p class="about-p"><strong data-i18n="about_label_biz">事業内容:</strong> <span data-i18n="about_biz_desc">移住者向け生活情報メディア（Chloe Guide）の運営、デジタルクリエイティブ（Chloe Studio）の企画・販売。</span></p>
+                <p class="about-p mission-text" data-i18n="about_mission">世界中の人々が国境や文化を超えて手をつなぎ、自分らしく心豊かな人生を送ることができることを目指しています。</p>
+            </div>
+        </section>
+
+        <!-- 6. Contact -->
+        <section id="contact" class="page-section">
+            <h2 class="section-title" data-i18n="contact_heading">Contact Form / お問い合わせ</h2>
+            <p class="section-desc" data-i18n="contact_desc">お仕事のご依頼やご質問はこちらからお気軽にお問い合わせください。</p>
+            <div class="contact-form">
+                <form action="https://formsubmit.co/chloe.undragon@gmail.com" method="POST">
+                    <!-- 送信完了後に自動で戻るページのURL（※ご自身のサイトのURLに変更してください） -->
+                    <input type="hidden" name="_next" value="https://あなたのサイトのURL/#contact">
+                    
+                    <!-- FormSubmit 設定オプション -->
+                    <input type="hidden" name="_subject" value="【Project Chloe】Webサイトより新しいお問い合わせが届きました">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" style="display:none">
+
+                    <div class="form-group">
+                        <label data-i18n="form_name">お名前 / Name</label>
+                        <input type="text" name="name" required placeholder="例：Chloe / 太郎">
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="form_email">メールアドレス / Email</label>
+                        <input type="email" name="email" required placeholder="例：info@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="form_message">お問い合わせ内容 / Message</label>
+                        <textarea name="message" required placeholder="ご質問やメッセージをご記入ください..."></textarea>
+                    </div>
+                    <button type="submit" class="btn full-width" data-i18n="form_submit">送信する / Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Project Chloe</h4>
+                <p>Connected Hearts, Lifestyles & Digital Creations.</p>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_brands">Brands</h4>
+                <p onclick="switchTab('guide')">Chloe Guide</p>
+                <p onclick="switchTab('studio')">Chloe Studio</p>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_support">Support</h4>
+                <p onclick="switchTab('contact')" data-i18n="nav_contact">Contact</p>
+                <p onclick="switchTab('about')" data-i18n="nav_about">About Us</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Project Chloe (Owner: Chloe). All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
